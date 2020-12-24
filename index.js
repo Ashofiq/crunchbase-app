@@ -15,6 +15,13 @@ const port = 3001
 
 // console.log(dom.window.document.querySelector("#client-app-state").textContent);
 
+
+app.get('/', (req, res) => {
+
+    res.send('hello')
+
+})
+
 app.get('/:name', (req, res) => {
 
     const name = req.params.name
