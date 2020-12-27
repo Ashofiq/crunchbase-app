@@ -28,7 +28,7 @@ app.get("/:name", (req, res) => {
     res.send(
       dom.window.document
         .querySelector("#client-app-state")
-        .text.replace(/\&q;/g, '"')
+        .text.replace(/\&q;/g, '"').replace("GET/v4/data/entities/organizations/"+ name +"field_ids=%5B%22identifier%22,%22layout_id%22,%22facet_ids%22,%22title%22,%22short_description%22,%22is_locked%22%5D&a;layout_mode=view_v2", "data")
     );
   });
 });
