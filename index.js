@@ -17,18 +17,14 @@ const port = 3001
 
 
 app.get('/', (req, res) => {
-
     res.send('hello')
-
 })
 
 app.get('/:name', (req, res) => {
-
     const name = req.params.name
     JSDOM.fromURL("https://www.crunchbase.com/organization/"+name, 'text/html').then(dom => {
         res.send(dom.window.document.querySelector("#client-app-state").text.replace(/\&q;/g, '"'));
     });
-
 })
 
 app.listen(port, () => {
